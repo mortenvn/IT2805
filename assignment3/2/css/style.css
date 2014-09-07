@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.pagewrap {
+  width: 700px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.tagline {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #CF1818;
+  margin-bottom: 1em;
+}
+
+.pagewrap ul {
+  margin-left: 20px;
+}
+
+a[href] {
+  color: #4472b9;
+  text-decoration: none;
+}
+
+a[href]:hover {
+  color: #888;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Assignment 3.2 */
+nav ul {
+  display: inline;
+}
+
+nav li {
+  display: block;
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+}
+
+section {
+  background-color: whitesmoke;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 300px;
+  float: left;
+  padding-right: 1em;
+}
+
+h2 {
+  margin-bottom: .5em;
+}
+
+.next {
+  float: right;
+}
+
+.linear-nav {
+  clear: both;
+  width: 100%;
+  padding-top: 1em;
+}

@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.pagewrap {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+.tagline {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #CF1818;
+  margin-bottom: 1em;
+}
+
+.pagewrap ul {
+  margin-left: 20px;
+}
+
+a[href] {
+  color: #4472b9;
+}
+
+a[href]:hover {
+  color: #888;
+}
+
+.profile-picture {
+  max-width: 200px;
+}
+
+/* Vertical navigation */
+nav {
+  margin-bottom: 1em;
+}
+
+nav ul {
+  display: inline;
+}
+
+nav li {
+  display: block;
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+}
+
+
+/* Timtable */
+.timetable {
+  margin-bottom: 30px;
+}
+
+.timetable .hours {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.timetable td {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.timetable th,
+.timetable td  {
+  padding: 5px 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+.timetable .yellow {
+  background-color: #fff2cc;
+}
+.timetable .red {
+  background-color: #f4cccc;
+}
+.timetable .green {
+  background-color: #d9ead3;
+}
+.timetable .blue {
+  background-color: #cfe2f3;
+}
+
+.pagewrap .subjects {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.subjects li {
+  display: block;
+  float: left;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.subjects:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.subject {
+  margin-bottom: 10px;
+}
+
+/* Sticky footer */
+html, body {
+  height: 100%;
+}
+.pagewrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -40px;
+}
+.pagewrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .pagewrap:after {
+  /* .push must be the same height as footer */
+  height: 40px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}

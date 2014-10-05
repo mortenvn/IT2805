@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="pagewrap">
+    <h1>Student form</h1>
+    <form action="http://www.idi.ntnu.no/~michailg/IT2805/form.php" method="post" id="studentForm">
+      <div class="field">
+        <label for="name">Name <span class="required">*</span></label>
+        <input type="text" name="name" id="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="field">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input type="text" name="phone" id="phone">
+      </div>
+
+      <div class="field">
+        <label for="year">Year <span class="required">*</span></label>
+        <select name="year" id="year">
+          <option value="1">1st Year-Freshman</option>
+          <option value="2">2nd Year-Sophmore</option>
+          <option value="3">3rd Year-Junior</option>
+          <option value="4">4th Year-Senior</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="startDate">Expected start date <span class="required">*</span></label>
+        <input type="date" name="startDate" id="startDate" required>
+      </div>
+
+      <div class="field">
+        <label for="classes[]">Courses <span class="required">*</span></label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="ITX1001" id="ITX1001">ITX1001: HTML Basics</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="ITX1002" id="ITX1002">ITX1002: URLs and Site Structures</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="ITX2001" id="ITX2001">ITX2001: Introduction to Cascading Style Sheets (CSS)</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="ITX2002" id="ITX2002">ITX2002: CSS Properties and Applications</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="ABC1001" id="ABC1001">ABC1001: Working with Multimedia on the Web</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="JSX1000" id="JSX1000">JSX1000: JSX1000: Introduction to JavaScript</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="JSX1040" id="JSX1040">JSX1040: JSX1040: JavaScript: DOM</label>
+        <label class="label-checkbox"><input type="checkbox" name="classes[]" value="XML1000" id="XML1000">XML1000: XML1000: XML: Formatting Namespace Trees</label>
+      </div>
+
+      <div class="field">
+        <label for="comments">Comments</label>
+        <textarea name="comments" id="comments"></textarea>
+      </div>
+      <input type="submit" value="Submit" class="button button-primary">
+    </form>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+    function validateInput() {
+      $('input').removeClass('error');
+
+      if ($('#name').val() == '') {
+        $('#name').addClass('error');
+      }
+
+      if ($('#email').val() == '') {
+        $('#email').addClass('error');
+      }
+
+      if ($('#startDate').val() == '') {
+        $('#startDate').addClass('error');
+      }
+    }
+
+    $('.button').click(function(){
+      validateInput();
+    });
+  </script>
+</body>
+</html>

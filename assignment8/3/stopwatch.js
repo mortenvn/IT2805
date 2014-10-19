@@ -7,7 +7,7 @@ Stopwatch = {
     timer: null,
     stopTime: 0,
     startTime: 0,
-    started: false
+    isRunning: false
   },
 
   init: function() {
@@ -18,21 +18,21 @@ Stopwatch = {
   },
 
   startStopTimer: function() {
-    if (s.started === false) {
-      s.started = true;
+    if (s.isRunning === false) {
+      s.isRunning = true;
       s.startTime = new Date().getTime();
       s.timer = setInterval(Stopwatch.updateDisplay,1);
     }
 
     else {
-      s.started = false;
+      s.isRunning = false;
       s.stopTime += new Date().getTime() - s.startTime;
       clearInterval(s.timer);
     }
   },
 
   resetTimer: function() {
-    s.started = false;
+    s.isRunning = false;
     s.startTime = 0;
     s.stopTime = 0;
     clearInterval(s.timer);

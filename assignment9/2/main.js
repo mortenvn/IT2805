@@ -1,19 +1,39 @@
+var add_button = document.getElementById("add-button");
+var clear_button = document.getElementById("clear-button");
+
+//Add event listeners
+add_button.addEventListener("click", addTask);
+clear_button.addEventListener("click", deleteCompletedTasks);
+
 function addTask() {
   var task_text = document.getElementById('task-input').value;
-
   if (task_text.trim() != '') {
     document.getElementById('task-input').value = '';
-    document.getElementById('tasks').innerHTML += taskToHTML(task_text);
-    setTaskCompleted();
+    taskToHTML(task_text);
   }
 }
 
-function taskToHTML(task) {
-  var checkbox = '<input type="checkbox" onclick="toggleCompleted(this)"> ';
-  var text = '<span class="task-text">' + task + '</span>';
-  return  '<div class="task">' + checkbox + text + '</div>';
+// Creates HTML code for the new task and adds it to the DOM
+function taskToHTML(task_text) {
+  var task = document.createElement("div");
+  task.className = 'task';
+
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.addEventListener("click", toggleCompleted, false);
+
+  var text = document.createElement('span');
+  text.innerText = task_text;
+  text.className = 'task-text';
+
+  task.appendChild(checkbox);
+  task.appendChild(text);
+
+  var tasks = document.getElementById("tasks");
+  tasks.appendChild(task);
 }
 
+// Delete all completed tasks
 function deleteCompletedTasks() {
   var tasks = Array.prototype.slice.call( document.getElementsByClassName('completed'));
   for (var i in tasks){
@@ -21,16 +41,9 @@ function deleteCompletedTasks() {
   }
 }
 
-function toggleCompleted(checkbox) {
+// Will toggle the class 'completed' when pressing a tasks checkbox
+function toggleCompleted(e) {
+  var checkbox = e.target;
   var task = checkbox.parentNode;
   task.className = (checkbox.checked ? 'task completed' : 'task');
-}
-
-// Fixes bug where checkboxes reset when the 'clear' button is pushed
-function setTaskCompleted() {
-  var tasks = document.getElementsByClassName('task completed');
-
-  for (var i = 0; i < tasks.length; i++) {
-    tasks[i].getElementsByTagName('input')[0].checked = true;
-  }
 }

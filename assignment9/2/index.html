@@ -10,20 +10,12 @@
     <h1>Todo</h1>
 
     <input type="text" id="task-input">
-    <button id="add-button" class="button button-primary" onclick="addTask();">+</button>
+    <button id="add-button" class="button button-primary">+</button>
 
     <div id="tasks">
-      <div class="task">
-        <input type="checkbox" onclick="toggleCompleted(this)"> <span class="task-text">Herp</span>
-      </div>
-      <div class="task">
-        <input type="checkbox" onclick="toggleCompleted(this)"> <span class="task-text">Derp</span>
-      </div>
-      <div class="task">
-        <input type="checkbox" onclick="toggleCompleted(this)"> <span class="task-text">Smerg</span>
-      </div>
+      <!-- Tasks will be added using javascript -->
     </div>
-    <button class="button clear" onclick="deleteCompletedTasks();">Clear</button>
+    <button id="clear-button" class="button">Clear</button>
   </div>
   <script src="main.js"></script>
 </body>

@@ -232,6 +232,6 @@ input:required:focus {
   color: darkgrey;
 }
 
-.clear {
+#clear-button {
   margin-top: 1em;
 }
